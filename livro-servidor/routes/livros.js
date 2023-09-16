@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const LivroDAO = require('../modelo/livro-dao'); // Importe o módulo DAO de livros
+const LivroDAO = require('../modelo/livro-dao'); 
 
-// Rota para listar todos os livros
+
 router.get('/', async (req, res, next) => {
   try {
     const livros = await LivroDAO.obterLivros();
@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// Rota para adicionar um novo livro
+
 router.post('/', async (req, res, next) => {
   const novoLivro = req.body; // Os dados do novo livro devem ser enviados no corpo da requisição
   try {
@@ -23,7 +23,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-// Rota para excluir um livro pelo ID
+
 router.delete('/:id', async (req, res, next) => {
   const codigoLivro = req.params.id;
   try {
